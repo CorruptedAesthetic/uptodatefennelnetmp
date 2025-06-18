@@ -1,6 +1,6 @@
 name: Create and publish a Docker image
 
-# Configures this workflow to run every time a change is pushed to the branch called `release`.
+# Configures this workflow to run every time a change is pushed to the branch called `main`.
 on:
   push:
     branches: ['main']
@@ -34,37 +34,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Free up additional disk space on GitHub runner (~10-15 GB)
-      - name: Free runner disk space
-        run: |
-          echo "=== Initial disk usage ==="
-          df -h
-          
-          echo "=== Removing unnecessary packages ==="
-          sudo apt-get remove -y '^dotnet-.*' '^llvm-.*' 'php.*' '^mongodb-.*' '^mysql-.*' azure-cli google-cloud-cli google-chrome-stable firefox powershell mono-devel libgl1-mesa-dri --auto-remove
-          sudo apt-get autoremove -y
-          sudo apt-get clean
-          
-          echo "=== Removing large directories ==="
-          sudo rm -rf /usr/share/dotnet
-          sudo rm -rf /opt/ghc
-          sudo rm -rf /usr/local/share/boost
-          sudo rm -rf /usr/share/swift
-          sudo rm -rf /usr/local/lib/android
-          sudo rm -rf /opt/hostedtoolcache
-          sudo rm -rf /usr/local/.ghcup
-          sudo rm -rf /usr/local/share/powershell
-          sudo rm -rf /usr/local/share/chromium
-          sudo rm -rf /usr/local/lib/node_modules
-          sudo rm -rf /opt/az
-          sudo rm -rf /usr/share/miniconda
-          sudo rm -rf /usr/lib/google-cloud-sdk
-          
-          echo "=== Removing Docker images ==="
-          docker image prune -a -f
-          
-          echo "=== Final disk usage ==="
-          df -h
+      # Free up additional disk space on GitHub runner (~20-25 GB)
+      # Enhanced cleanup for Polkadot SDK builds without cache
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # 1.3.1
+        with:
+          android: true        # 12 GB save
+          dotnet: true         # 3 GB save  
+          haskell: true        # 2 GB save
+          large-packages: true # 4 GB save
+          swap-storage: false  # Keep swap for large builds
 
       # Set up Docker Buildx for efficient layer caching
       - name: Set up Docker Buildx
@@ -106,7 +85,7 @@ jobs:
             -e RUNTIME_DIR=runtime/fennel \
             -e PACKAGE=fennel-node-runtime \
             --workdir /build \
-            paritytech/srtool:1.84.1 /srtool/build
+            paritytech/srtool:1.84.1
 
           # After the container exits the compiled Wasm lives in the mounted volume
           HASH=$(sha256sum runtime/fennel/target/srtool/release/wbuild/fennel-node-runtime/fennel_node_runtime.compact.wasm | awk '{print "0x"$1}')
@@ -123,6 +102,16 @@ jobs:
           find runtime/fennel/target/srtool -type f -name "*.rmeta" -delete || true
           find runtime/fennel/target/srtool -type d -name "deps" -exec rm -rf {} + || true
           find runtime/fennel/target/srtool -type d -name "build" -exec rm -rf {} + || true
+          
+          # Additional aggressive cleanup
+          echo "=== Additional cleanup ==="
+          # Remove Docker build cache and unused images
+          docker system prune -af --volumes || true
+          # Remove temporary files
+          sudo rm -rf /tmp/* || true
+          # Remove apt cache
+          sudo apt-get clean || true
+          
           echo "=== Disk usage after cleanup ==="
           df -h
 
@@ -426,8 +415,9 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             WASM_HASH=${{ env.WASM_HASH }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # Remove problematic cache settings that are causing the blob error
+          # cache-from: type=gha
+          # cache-to: type=gha,mode=max
           provenance: false
           
       # Create and upload artifact containing image info
