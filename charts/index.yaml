@@ -3,14 +3,14 @@ entries:
   fennel-node:
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2025-06-20T16:54:00.25690155Z"
+    created: "2025-06-20T17:08:03.77752623Z"
     dependencies:
     - condition: node.enabled
       name: node
       repository: https://paritytech.github.io/helm-charts
       version: 5.15.0
     description: Fennel Solochain Validator Node - Staging Environment
-    digest: d6b0870a6851182e3786e76d70b5e0c05dcd5b1aa47157038dd8d679c62e7414
+    digest: 939db13a77fc09e56713781f24f9b0f0a2b1d6d72cf60d0cecaf3a2c244318b9
     icon: https://avatars.githubusercontent.com/u/56845690?s=200&v=4
     keywords:
     - blockchain
@@ -27,4 +27,4 @@ entries:
     urls:
     - https://corruptedaesthetic.github.io/fennel-solonet/charts/fennel-node-0.2.0.tgz
     version: 0.2.0
-generated: "2025-06-20T16:54:00.254173499Z"
+generated: "2025-06-20T17:08:03.774496901Z"
