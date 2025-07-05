@@ -19,6 +19,6 @@ helm install fennel-node fennel/fennel-node
 
 - **fennel-node** - Fennel blockchain node deployment chart
 
-## Chart Version: 0.3.1
+## Chart Version: 0.4.0
 
 Generated automatically by GitHub Actions.

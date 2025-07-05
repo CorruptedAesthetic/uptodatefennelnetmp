@@ -2,8 +2,8 @@ apiVersion: v1
 entries:
   fennel-node:
   - apiVersion: v2
-    appVersion: 0.2.0
-    created: "2025-07-01T05:38:45.702433672Z"
+    appVersion: 0.4.0
+    created: "2025-07-05T05:13:47.35340143Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -11,7 +11,35 @@ entries:
       version: 5.15.0
     description: A Helm chart for deploying Fennel Substrate nodes following official
       Parity patterns
-    digest: 255896b0532d3a37bc0e9e4c4a88c844645560fb7a21bd2aced1e705bd02a88b
+    digest: adcd4102e14035aecaba6e779be6155e36d22b6acf12173e02eaf66a43b754d1
+    home: https://github.com/corruptedaesthetic/fennel-solonet
+    keywords:
+    - blockchain
+    - substrate
+    - polkadot
+    - validator
+    - solochain
+    - fennel
+    maintainers:
+    - name: corruptedaesthetic
+    name: fennel-node
+    sources:
+    - https://github.com/corruptedaesthetic/fennel-solonet
+    type: application
+    urls:
+    - https://corruptedaesthetic.github.io/fennel-solonet/charts/fennel-node-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2025-07-05T05:13:47.350978519Z"
+    dependencies:
+    - condition: node.enabled
+      name: node
+      repository: https://paritytech.github.io/helm-charts
+      version: 5.15.0
+    description: A Helm chart for deploying Fennel Substrate nodes following official
+      Parity patterns
+    digest: f6472613937a1cf7344272ad6db00a37a1db2804f8ae1c7a4694070edebbe6c2
     home: https://github.com/corruptedaesthetic/fennel-solonet
     keywords:
     - blockchain
@@ -31,7 +59,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2025-07-01T05:38:45.699666702Z"
+    created: "2025-07-05T05:13:47.348104231Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -59,7 +87,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2025-07-01T05:38:45.696491171Z"
+    created: "2025-07-05T05:13:47.345132452Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -83,4 +111,4 @@ entries:
     urls:
     - https://corruptedaesthetic.github.io/fennel-solonet/charts/fennel-node-0.2.0.tgz
     version: 0.2.0
-generated: "2025-07-01T05:38:45.693866908Z"
+generated: "2025-07-05T05:13:47.339738081Z"
