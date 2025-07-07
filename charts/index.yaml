@@ -3,7 +3,7 @@ entries:
   fennel-node:
   - apiVersion: v2
     appVersion: 0.4.2
-    created: "2025-07-07T06:28:05.503376883Z"
+    created: "2025-07-07T07:07:01.685203072Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -11,7 +11,7 @@ entries:
       version: 5.15.0
     description: A Helm chart for deploying Fennel Substrate nodes following official
       Parity patterns
-    digest: f6a0ed7f6ef0c7aac11923a44d7bcb163a52a0933f915d8816033f93e0f15ec7
+    digest: c1eeafd418afa353384f5d16c415ba61f6bef40a0a25217b43c705f52103b2e0
     home: https://github.com/corruptedaesthetic/fennel-solonet
     keywords:
     - blockchain
@@ -31,7 +31,7 @@ entries:
     version: 0.4.2
   - apiVersion: v2
     appVersion: 0.4.1
-    created: "2025-07-07T06:28:05.501041724Z"
+    created: "2025-07-07T07:07:01.682825115Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -59,7 +59,7 @@ entries:
     version: 0.4.1
   - apiVersion: v2
     appVersion: 0.4.0
-    created: "2025-07-07T06:28:05.498488576Z"
+    created: "2025-07-07T07:07:01.680578332Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -87,7 +87,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2025-07-07T06:28:05.495665189Z"
+    created: "2025-07-07T07:07:01.677562498Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -115,7 +115,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2025-07-07T06:28:05.492508294Z"
+    created: "2025-07-07T07:07:01.675277122Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -143,7 +143,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2025-07-07T06:28:05.490273744Z"
+    created: "2025-07-07T07:07:01.672910637Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -167,4 +167,4 @@ entries:
     urls:
     - https://corruptedaesthetic.github.io/fennel-solonet/fennel-node-0.2.0.tgz
     version: 0.2.0
-generated: "2025-07-07T06:28:05.487913238Z"
+generated: "2025-07-07T07:07:01.670546826Z"
