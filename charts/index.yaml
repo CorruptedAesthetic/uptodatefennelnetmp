@@ -2,8 +2,36 @@ apiVersion: v1
 entries:
   fennel-node:
   - apiVersion: v2
+    appVersion: 0.4.2
+    created: "2025-07-07T06:07:17.840849307Z"
+    dependencies:
+    - condition: node.enabled
+      name: node
+      repository: https://paritytech.github.io/helm-charts
+      version: 5.15.0
+    description: A Helm chart for deploying Fennel Substrate nodes following official
+      Parity patterns
+    digest: 28baa0735580eaa2f449291af40550be89db7a471b6f02162941d5edab804063
+    home: https://github.com/corruptedaesthetic/fennel-solonet
+    keywords:
+    - blockchain
+    - substrate
+    - polkadot
+    - validator
+    - solochain
+    - fennel
+    maintainers:
+    - name: corruptedaesthetic
+    name: fennel-node
+    sources:
+    - https://github.com/corruptedaesthetic/fennel-solonet
+    type: application
+    urls:
+    - https://corruptedaesthetic.github.io/fennel-solonet/fennel-node-0.4.2.tgz
+    version: 0.4.2
+  - apiVersion: v2
     appVersion: 0.4.1
-    created: "2025-07-06T21:48:01.599345757Z"
+    created: "2025-07-07T06:07:17.838055089Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -27,11 +55,11 @@ entries:
     - https://github.com/corruptedaesthetic/fennel-solonet
     type: application
     urls:
-    - https://corruptedaesthetic.github.io/fennel-solonet/charts/fennel-node-0.4.1.tgz
+    - https://corruptedaesthetic.github.io/fennel-solonet/fennel-node-0.4.1.tgz
     version: 0.4.1
   - apiVersion: v2
     appVersion: 0.4.0
-    created: "2025-07-06T21:48:01.596970427Z"
+    created: "2025-07-07T06:07:17.835299344Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -55,11 +83,11 @@ entries:
     - https://github.com/corruptedaesthetic/fennel-solonet
     type: application
     urls:
-    - https://corruptedaesthetic.github.io/fennel-solonet/charts/fennel-node-0.4.0.tgz
+    - https://corruptedaesthetic.github.io/fennel-solonet/fennel-node-0.4.0.tgz
     version: 0.4.0
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2025-07-06T21:48:01.594101187Z"
+    created: "2025-07-07T06:07:17.832473347Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -83,11 +111,11 @@ entries:
     - https://github.com/corruptedaesthetic/fennel-solonet
     type: application
     urls:
-    - https://corruptedaesthetic.github.io/fennel-solonet/charts/fennel-node-0.3.1.tgz
+    - https://corruptedaesthetic.github.io/fennel-solonet/fennel-node-0.3.1.tgz
     version: 0.3.1
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2025-07-06T21:48:01.591492541Z"
+    created: "2025-07-07T06:07:17.829008406Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -111,11 +139,11 @@ entries:
     - https://github.com/corruptedaesthetic/fennel-solonet
     type: application
     urls:
-    - https://corruptedaesthetic.github.io/fennel-solonet/charts/fennel-node-0.3.0.tgz
+    - https://corruptedaesthetic.github.io/fennel-solonet/fennel-node-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2025-07-06T21:48:01.589294774Z"
+    created: "2025-07-07T06:07:17.826780007Z"
     dependencies:
     - condition: node.enabled
       name: node
@@ -137,6 +165,6 @@ entries:
     name: fennel-node
     type: application
     urls:
-    - https://corruptedaesthetic.github.io/fennel-solonet/charts/fennel-node-0.2.0.tgz
+    - https://corruptedaesthetic.github.io/fennel-solonet/fennel-node-0.2.0.tgz
     version: 0.2.0
-generated: "2025-07-06T21:48:01.586987281Z"
+generated: "2025-07-07T06:07:17.824336917Z"
